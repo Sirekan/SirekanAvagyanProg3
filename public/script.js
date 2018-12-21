@@ -93,7 +93,7 @@ $(document).ready(function(){
                     var patjar = data[i].patjar;
                     $('<p></p>').attr({
                         'class':'text',
-                    }).appendTo('#statica').text(anun + '////////////' + patjar);
+                    }).appendTo('#statica').text(anun + ' --was killed--  ' + patjar);
                 }
             }
         });
