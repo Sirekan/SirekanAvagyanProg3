@@ -72,3 +72,29 @@ socket.on('number',function(data){
 		});
 	}
 });
+$(document).ready(function(){
+        $('<div></div>').attr({
+            'id':'statica',
+        }).appendTo('body').css({
+            'width':'500px',
+            'height':'500px',
+            'position':'absolute',
+            'left':'650px',
+            'top':'0px',
+            'border':'solid black',
+            'overflow':'scroll'
+        });
+        socket.on('obj',function(data){
+            $('#statica').empty();
+            if(data != [])
+            {
+                for(var i = 0;i<data.length;++i){
+                    var anun = data[i].name;
+                    var patjar = data[i].patjar;
+                    $('<p></p>').attr({
+                        'class':'text',
+                    }).appendTo('#statica').text(anun + '////////////' + patjar);
+                }
+            }
+        });
+    });

@@ -140,6 +140,7 @@ setInterval(function(){
     ///////////////////////////////////
     if (varib.statica >= 6) {
         main();
+        io.sockets.emit('obj', varib.arr_obj);
         varib.arr_obj = [];
         varib.statica = 0;
     }
